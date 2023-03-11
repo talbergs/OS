@@ -65,6 +65,7 @@
     # [G]it
     g = "git";
     gr = "git remote -v";
+    gb = "git branch";
     ga = "git add";
     gR = "git rev-parse HEAD";
     gl = "git log";

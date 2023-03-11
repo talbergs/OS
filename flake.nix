@@ -1,8 +1,9 @@
 {
   description = "A fix for the biggest mistake in human history.";
 
-  # inputs.nixpkgs.url = "git+https://github.com/nixos/nixpkgs";
-  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+  
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs";
+  # inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   inputs.nvim.url = "/home/mt/FLAKE-NVIM";
 
   outputs = inputs:
