@@ -1,3 +1,12 @@
+# Clean up older generations like so:
+```
+ls /boot/efi/loader/entries | wc -l # => 100
+sudo nix-collect-garbage --delete-older-than 7d
+ls /boot/efi/loader/entries | wc -l # => 100
+sudo nixos-rebuild --install-bootloader --flake .# switch
+ls /boot/efi/loader/entries | wc -l # => 2
+```
+
 # https://www.reddit.com/r/NixOS/comments/ym67ly/refactor_a_nixos_configuration_and_visualize/
 
 ## FOR SECRETS
