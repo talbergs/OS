@@ -21,6 +21,7 @@
   config.environment.systemPackages = [
     pkgs.pritunl-client
     pkgs.wireshark
+    pkgs.tcpdump
     pkgs.traceroute
     pkgs.nmap
     pkgs.bind # that's gives also the "dig" utility
