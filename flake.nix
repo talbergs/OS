@@ -20,6 +20,7 @@
           inherit system;
           specialArgs = {
             myPkgs = import ./myPkgs { inherit pkgs; };
+            myUsername = "mt";
           };
           modules = [
             ./system/alacritty/alacritty.nix
