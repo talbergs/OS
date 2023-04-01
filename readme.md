@@ -1,3 +1,10 @@
+# When during a system build machine looses power, corrupt state may be fixed by:
+```
+sudo nix-store --verify --check-contents --repair
+```
+Also, This `https://nixos.org/manual/nix/stable/command-ref/conf-file.html#conf-sync-before-registering` if set to true
+would eliminate possibility to corrupt system when it shuts down during install.
+
 # Clean up older generations like so:
 ```
 ls /boot/efi/loader/entries | wc -l # => 100

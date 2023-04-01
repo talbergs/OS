@@ -9,6 +9,7 @@
     pkgs.jd-diff-patch # jd
     pkgs.tree
     pkgs.entr
+    pkgs.busybox
   ];
 
 }

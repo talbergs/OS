@@ -31,6 +31,7 @@
             ./system/eww
             ./system/fish.nix
             ./system/glow.nix
+            ./system/latex.nix
             ./system/fkill.nix
             ./system/fonts/fonts.nix
             ./system/fuzzel/fuzzel.nix
