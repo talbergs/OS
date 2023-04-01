@@ -16,14 +16,45 @@
         "url": "https://github.com/norcalli/nvim-colorizer.lua"
       }
     },
+    "flake-compat": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1673956053,
+        "narHash": "sha256-4gtG9iQuiKITOjNQQeQIpoIB6b16fm+504Ch3sNKLd8=",
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "rev": "35bb57c0c8d8b62bbfd284272c928ceb64ddbde9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "type": "github"
+      }
+    },
+    "flake-utils": {
+      "locked": {
+        "lastModified": 1667395993,
+        "narHash": "sha256-nuEHfE/LcWyuSWnS8t12N1wc105Qtau+/OdUAjtQ0rA=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "5aed5285a952e0b949eb3ba02c12fa4fcfef535f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
     "lspconfig": {
       "flake": false,
       "locked": {
-        "lastModified": 1678408019,
-        "narHash": "sha256-2A/4IeUbZ7GdiSU1pMQfvbMGV9cjNFlSgJaHARwnAdw=",
+        "lastModified": 1680207200,
+        "narHash": "sha256-04N1kvQPUhDZ45U+YY1M8DqGz86/5xxri6EWiaov4nc=",
         "ref": "refs/heads/master",
-        "rev": "4bb0f1845c5cc6465aecedc773fc2d619fcd8faf",
-        "revCount": 2287,
+        "rev": "94291c924f0efdbc16ac625cf77ae7d3a7fa5821",
+        "revCount": 2315,
         "type": "git",
         "url": "https://github.com/neovim/nvim-lspconfig"
       },
@@ -67,17 +98,62 @@
     "neodev": {
       "flake": false,
       "locked": {
-        "lastModified": 1678514723,
-        "narHash": "sha256-mZUEOEYlFR9whBOh/dKhwqxnoC0HZHZx36Q62IT7Lb0=",
+        "lastModified": 1680329108,
+        "narHash": "sha256-Y1Wix6/F9gE2627twA6lW5Onz+K0B1wHAKOgRqp3ULQ=",
         "ref": "refs/heads/main",
-        "rev": "418c54441da2506ee9c99150c38e3f350bcad8c4",
-        "revCount": 463,
+        "rev": "cfd2bb977261194a6e91431f62eb500a1d0cf1da",
+        "revCount": 502,
         "type": "git",
         "url": "https://github.com/folke/neodev.nvim"
       },
       "original": {
         "type": "git",
         "url": "https://github.com/folke/neodev.nvim"
+      }
+    },
+    "neovim-flake": {
+      "inputs": {
+        "flake-utils": "flake-utils",
+        "nixpkgs": [
+          "nvim",
+          "neovim-nightly-overlay",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "dir": "contrib",
+        "lastModified": 1680310604,
+        "narHash": "sha256-2jop/z79HYhmV/hrdGvhjfTMouvzQvNRgFTkPhwWVcg=",
+        "owner": "neovim",
+        "repo": "neovim",
+        "rev": "75e1b1d5c934aa3a12693a7df58795563fb7877e",
+        "type": "github"
+      },
+      "original": {
+        "dir": "contrib",
+        "owner": "neovim",
+        "repo": "neovim",
+        "type": "github"
+      }
+    },
+    "neovim-nightly-overlay": {
+      "inputs": {
+        "flake-compat": "flake-compat",
+        "neovim-flake": "neovim-flake",
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1680336751,
+        "narHash": "sha256-otSdFRXsNyPYOsbo+49vN4UGwZrVoLDrEp0EkyVJ/rY=",
+        "ref": "refs/heads/master",
+        "rev": "d56f32281f4d6d74ce925a99946713dc6b5a0e30",
+        "revCount": 1039,
+        "type": "git",
+        "url": "https://github.com/nix-community/neovim-nightly-overlay"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://github.com/nix-community/neovim-nightly-overlay"
       }
     },
     "nixpkgs": {
@@ -98,28 +174,43 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1678470307,
-        "narHash": "sha256-OEeMUr3ueLIXyW/OaFUX5jUdimyQwMg/7e+/Q0gC/QE=",
-        "owner": "NixOS",
+        "lastModified": 1680273054,
+        "narHash": "sha256-Bs6/5LpvYp379qVqGt9mXxxx9GSE789k3oFc+OAL07M=",
+        "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "0c4800d579af4ed98ecc47d464a5e7b0870c4b1f",
+        "rev": "3364b5b117f65fe1ce65a3cdd5612a078a3b31e3",
         "type": "github"
       },
       "original": {
-        "owner": "NixOS",
-        "ref": "nixos-unstable",
+        "owner": "nixos",
+        "ref": "nixpkgs-unstable",
         "repo": "nixpkgs",
         "type": "github"
+      }
+    },
+    "nixpkgs_3": {
+      "locked": {
+        "lastModified": 1680334200,
+        "narHash": "sha256-kDEdiPCw41us+8p6ae2vz2Xd8cmPxXzc9uTftAWuUzc=",
+        "ref": "refs/heads/master",
+        "rev": "45c671173b3392e946dee7f9aa6c40c6f348bec3",
+        "revCount": 469818,
+        "type": "git",
+        "url": "https://github.com/nixos/nixpkgs"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://github.com/nixos/nixpkgs"
       }
     },
     "null-ls": {
       "flake": false,
       "locked": {
-        "lastModified": 1678483189,
-        "narHash": "sha256-bZp6nHhS9ZT7r9x+9A30ROMMPQQvwdT2nvP/0GV2K+s=",
+        "lastModified": 1680311856,
+        "narHash": "sha256-JViLNL2LLzm+ZQYnR4HF3e2mBa7AbDK7jWn4ZhjKYbY=",
         "ref": "refs/heads/main",
-        "rev": "e172e1e3011e3d032dbeba6414644ba968570828",
-        "revCount": 1884,
+        "rev": "defa0518762abb32279d601443344fb9773f9330",
+        "revCount": 1904,
         "type": "git",
         "url": "https://github.com/jose-elias-alvarez/null-ls.nvim"
       },
@@ -135,7 +226,8 @@
         "md-preview": "md-preview",
         "melange": "melange",
         "neodev": "neodev",
-        "nixpkgs": "nixpkgs_2",
+        "neovim-nightly-overlay": "neovim-nightly-overlay",
+        "nixpkgs": "nixpkgs_3",
         "null-ls": "null-ls",
         "telescope-tabs": "telescope-tabs",
         "ts-context": "ts-context",
@@ -144,8 +236,11 @@
         "zen": "zen"
       },
       "locked": {
-        "lastModified": 0,
-        "narHash": "sha256-blL8jBvcExvYLIDWlNuUq2oaR24gxcUAKotBBmHSMAg=",
+        "lastModified": 1680390474,
+        "narHash": "sha256-d++sh3gYPZOqyagx+TNgzqA+BBK/WMkefW1h8Dsk54s=",
+        "ref": "refs/heads/main",
+        "rev": "9cc1ecf1b88217e174e4e1d324c25608221c865c",
+        "revCount": 3,
         "type": "git",
         "url": "file:///home/mt/FLAKE-NVIM"
       },
@@ -179,11 +274,11 @@
     "ts-context": {
       "flake": false,
       "locked": {
-        "lastModified": 1678533190,
-        "narHash": "sha256-STl76hVjS5txlA5n25aUXH5vDKHhaWfT8Ou4ObzxpuA=",
+        "lastModified": 1680252218,
+        "narHash": "sha256-x1j2Kn9U2U0BnXI//80JvfqM/7alz0XxwSQMM1tkAYk=",
         "ref": "refs/heads/master",
-        "rev": "67dcaf9d913d31a9e87d8deceb7eaecf1c33bb22",
-        "revCount": 194,
+        "rev": "959265a5d438462dc5d3dde215b915109c3d6fcb",
+        "revCount": 205,
         "type": "git",
         "url": "https://github.com/nvim-treesitter/nvim-treesitter-context"
       },
@@ -227,11 +322,11 @@
     "zen": {
       "flake": false,
       "locked": {
-        "lastModified": 1677490765,
-        "narHash": "sha256-WL6+PtPPOIQ/UCyoIZY7wNXTrBpkBg4jJ8ABRfu7Kbw=",
+        "lastModified": 1679256007,
+        "narHash": "sha256-3Od9gplrEWvzdMYsiZQzxo9wgcLh/Onqrz+/ij1dLUo=",
         "ref": "refs/heads/main",
-        "rev": "4f2e70d75b7ece1c2a7c852664db492537078996",
-        "revCount": 50,
+        "rev": "d907e638c879642d226d27469b53db6925f69d4c",
+        "revCount": 54,
         "type": "git",
         "url": "https://github.com/folke/zen-mode.nvim"
       },
