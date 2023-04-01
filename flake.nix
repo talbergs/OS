@@ -4,7 +4,7 @@
   
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   # inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-  inputs.nvim.url = "/home/mt/FLAKE-NVIM";
+  inputs.nvim.url = "git+file:///home/mt/FLAKE-NVIM";
 
   outputs = inputs:
     let

@@ -5,6 +5,10 @@ sudo nix-store --verify --check-contents --repair
 Also, This `https://nixos.org/manual/nix/stable/command-ref/conf-file.html#conf-sync-before-registering` if set to true
 would eliminate possibility to corrupt system when it shuts down during install.
 
+# Update just few of the flake inputs:
+```
+```
+
 # Clean up older generations like so:
 ```
 ls /boot/efi/loader/entries | wc -l # => 100
