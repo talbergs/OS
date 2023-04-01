@@ -236,11 +236,11 @@
         "zen": "zen"
       },
       "locked": {
-        "lastModified": 1680390474,
-        "narHash": "sha256-d++sh3gYPZOqyagx+TNgzqA+BBK/WMkefW1h8Dsk54s=",
+        "lastModified": 1680391379,
+        "narHash": "sha256-fVCWACTTB8Zy9imIvi1RGynDyZkC4ddIBrs40+XWOCU=",
         "ref": "refs/heads/main",
-        "rev": "9cc1ecf1b88217e174e4e1d324c25608221c865c",
-        "revCount": 3,
+        "rev": "660329367cac5f3f835464eba98c27d2e06e681d",
+        "revCount": 4,
         "type": "git",
         "url": "file:///home/mt/FLAKE-NVIM"
       },
