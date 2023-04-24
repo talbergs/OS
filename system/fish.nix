@@ -55,6 +55,13 @@
       # ${pkgs.lib.getExe myPkgs.please-cli}
     end
     ${pkgs.lib.getExe pkgs.zoxide} init fish | source
+
+    # set FZF-FISH bindings
+    # Print possibilities by.
+    # `fzf_configure_bindings --help`
+    fzf_configure_bindings --git_log=\cg
+    fzf_configure_bindings --history=\cr
+    fzf_configure_bindings --directory=\cf
   '';
 
   config.programs.fish.shellAbbrs = {
