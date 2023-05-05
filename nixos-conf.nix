@@ -14,7 +14,7 @@ let un = ARGS.username;
 in
       {
         home-manager.extraSpecialArgs = { inherit ARGS; };
-        home-manager.users.${un}.imports = [ ./home.nix ];
+        home-manager.users.${un} = {imports = [ ./home.nix ];};
         # home-manager.users.mt = { pkgs, ... }: { imports = [ ./home.nix ]; };
       })
       ./system/alacritty/alacritty.nix
