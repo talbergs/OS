@@ -9,9 +9,12 @@
     specialArgs.ARGS.email = "tell@noone.ever";
     modules = [
       inputs.home-manager.nixosModule
-      ({ARGS, ...}: {
+      ({ARGS, ...}:
+let un = ARGS.username;
+in
+      {
         home-manager.extraSpecialArgs = { inherit ARGS; };
-        home-manager.users.${ARGS.username}.imports = [ ./home.nix ];
+        home-manager.users.${un}.imports = [ ./home.nix ];
         # home-manager.users.mt = { pkgs, ... }: { imports = [ ./home.nix ]; };
       })
       ./system/alacritty/alacritty.nix
