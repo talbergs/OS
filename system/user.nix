@@ -1,10 +1,7 @@
 { ARGS, ... } :
-
-let un = ARGS.username;
-in
 {
 
-  users.users.${un} = {
+  users.users.${ARGS.username} = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
     initialPassword = "pass";
