@@ -2,9 +2,9 @@
 
 {
 
-  users.users.mt.isNormalUser = true;
-  users.users.mt.extraGroups = [ "wheel" ];
-  users.users.mt.initialPassword = "pass";
+  users.users.${ARGS.username}.isNormalUser = true;
+  users.users.${ARGS.username}.extraGroups = [ "wheel" ];
+  users.users.${ARGS.username}.initialPassword = "pass";
 
   services.getty.autologinUser = ARGS.username;
   # home-manager.extraSpecialArgs = { email = "xxxx"; };
