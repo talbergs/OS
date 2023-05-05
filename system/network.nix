@@ -1,4 +1,4 @@
-{ config, pkgs, myUsername, ... }:
+{ config, pkgs, ARGS, ... }:
 
 {
 
@@ -42,9 +42,9 @@
   config.services.samba.enableNmbd = false;
   config.services.samba.extraConfig = ''
 [global]
-guest account = ${myUsername}
+guest account = ${ARGS.username}
 map to guest = bad user
-netbios name = ${myUsername}
+netbios name = ${ARGS.username}
 server string = Samba %v on (%I)
 workgroup = SIMPLE
 
@@ -62,19 +62,19 @@ fruit:delete_empty_adfiles = yes
 hosts allow = 192.168.1. localhost
 
 [data]
-path = /home/${myUsername}/SambaData
+path = /home/${ARGS.username}/SambaData
 browseable = yes
 guest ok = yes
 writeable = yes
 
 [kartinas-images]
-path = /home/${myUsername}/KARTINAS/assets/images
+path = /home/${ARGS.username}/KARTINAS/assets/images
 browseable = yes
 guest ok = yes
 writeable = yes
 
 [kartinas-fonts]
-path = /home/${myUsername}/KARTINAS/assets/fonts
+path = /home/${ARGS.username}/KARTINAS/assets/fonts
 browseable = yes
 guest ok = yes
 writeable = yes

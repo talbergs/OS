@@ -4,6 +4,7 @@ set $alt Mod1
 
 bindsym $mod+Return exec alacritty
 bindsym $mod+w exec chromium
+bindsym Control+space exec makoctl dismiss
 
 set $menu fuzzel
 bindsym $mod+d exec $menu
@@ -31,7 +32,6 @@ bindsym $mod+Shift+q kill
 bindsym $mod+Shift+c reload
 bindsym $mod+b splith
 bindsym $mod+v splitv
-
 
 bindsym $mod+Tab workspace back_and_forth
 

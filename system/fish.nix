@@ -1,11 +1,11 @@
-{ config, pkgs, myPkgs, ... }:
+{ config, pkgs, ... }:
 
 {
 
   config.users.users.mt.shell = pkgs.fish;
 
   config.environment.systemPackages = [
-    myPkgs.please-cli 
+    # myPkgs.please-cli 
 
     # Z - that fast CD (change directory)
     # =======================
@@ -50,9 +50,12 @@
   config.programs.fish.vendor.functions.enable = true;
   config.programs.fish.enable = true;
 
+    # function fish_greeting
+    #   # ${pkgs.lib.getExe myPkgs.please-cli}
+    # end
+
   config.programs.fish.interactiveShellInit = ''
     function fish_greeting
-      # ${pkgs.lib.getExe myPkgs.please-cli}
     end
     ${pkgs.lib.getExe pkgs.zoxide} init fish | source
 

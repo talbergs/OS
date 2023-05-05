@@ -7,6 +7,7 @@ would eliminate possibility to corrupt system when it shuts down during install.
 
 # Update just few of the flake inputs:
 ```
+nix flake lock --commit-lock-file --update-input nvim
 ```
 
 # Clean up older generations like so:

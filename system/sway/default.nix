@@ -23,7 +23,6 @@
 
   # TODO: split these out
   config.environment.systemPackages = with pkgs; [
-    zathura
     dbus
     transmission-gtk
     # < THEMES
