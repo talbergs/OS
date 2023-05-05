@@ -1,4 +1,4 @@
-{ ARGS, ... }: {
+{ ARGS, pkgs, ... }: {
 
   home.stateVersion = "21.05";
   home.file = {".xxx".text = ''asdasdasd3'';};
@@ -12,4 +12,16 @@
             key = "AA1BA03FFF02700DFD836BD325B242ED74B61B15";
         };
     };
+    gtk = {
+        enable = true;
+        theme = {
+            name = "Colloid";
+            package = pkgs.colloid-gtk-theme;
+        };
+        iconTheme = {
+            name = "Adwaita";
+            package = pkgs.gnome.adwaita-icon-theme;
+        };
+    };
+
 }
