@@ -1,27 +1,38 @@
-{ ARGS, pkgs, ... }: {
+{ pkgs, myPkgs, ... }: {
 
   home.stateVersion = "21.05";
-  home.file = {".xxx".text = ''asdasdasd3'';};
 
-  programs.git = {
-        enable = true;
-        userName = "virchau13";
-        userEmail = "${ARGS.email}@hexular.net";
-        signing = {
-            signByDefault = false;
-            key = "AA1BA03FFF02700DFD836BD325B242ED74B61B15";
-        };
+  imports = [
+    ./hm/git.nix
+    ./hm/alacritty.nix
+    ./hm/sway.nix
+    ./hm/mpv.nix
+    ./hm/mime.nix
+    ./hm/eww.nix
+  ];
+
+  home.packages = [
+    myPkgs.please-cli
+    myPkgs.fkill
+    pkgs.swayimg
+    pkgs.silver-searcher # ag
+    pkgs.jq
+    pkgs.jd-diff-patch # jd
+    pkgs.tree
+    pkgs.entr
+    pkgs.busybox
+  ];
+
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Colloid";
+      package = pkgs.colloid-gtk-theme;
     };
-    gtk = {
-        enable = true;
-        theme = {
-            name = "Colloid";
-            package = pkgs.colloid-gtk-theme;
-        };
-        iconTheme = {
-            name = "Adwaita";
-            package = pkgs.gnome.adwaita-icon-theme;
-        };
+    iconTheme = {
+      name = "Adwaita";
+      package = pkgs.gnome.adwaita-icon-theme;
     };
+  };
 
 }

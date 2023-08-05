@@ -1,8 +1,7 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
-let
 # More https://www.ertt.ca/nix/shell-scripts/
-  fkill = pkgs.writeShellScriptBin "fkill" ''
+pkgs.writeShellScriptBin "fkill" ''
 #!/bin/bash
 #|
 #| [f]uzzy [kill] match and kill a process(es)
@@ -29,9 +28,4 @@ pid=$(
 if [ "x$pid" != "x" ]; then
     echo $pid | xargs kill -9
 fi
-  '';
-in
-
-{
-  config.environment.systemPackages = [ fkill ];
-}
+''

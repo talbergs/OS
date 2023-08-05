@@ -2,7 +2,8 @@ _: ''
 set $mod Mod4
 set $alt Mod1
 
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return [app_id="Alacritty"] exec alacritty
+bindsym $mod+Shift+Return exec alacritty
 bindsym $mod+w exec chromium
 bindsym Control+space exec makoctl dismiss
 

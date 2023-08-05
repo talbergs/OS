@@ -16,10 +16,10 @@
   config.xdg.portal.wlr.settings = {
   };
 
-  config.programs.sway.extraOptions = [
-    "--config"
-    "/etc/sway.config"
-  ];
+  # config.programs.sway.extraOptions = [
+  #   "--config"
+  #   "/etc/sway.config"
+  # ];
 
   # TODO: split these out
   config.environment.systemPackages = with pkgs; [
@@ -55,6 +55,6 @@
   };
 
   # TODO: pass in the correct fuzzel and other binaries referenced in other config places.
-  config.environment.etc."sway.config".text = import ./sway.config.nix {};
+  # config.environment.etc."sway.config".text = import ./sway.config.nix {};
 
 }

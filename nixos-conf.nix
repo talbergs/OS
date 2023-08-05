@@ -1,30 +1,28 @@
 # Various hosts configured.
 
-{ inputs, system, ... }:
+{ pkgs, inputs, system, ... }:
 {
   # arbitrary key "nixos" is considered the "default" (inconsistancy bug)
   nixos = inputs.nixpkgs.lib.nixosSystem {
     inherit system;
     specialArgs.ARGS.username = "mt";
     specialArgs.ARGS.email = "tell@noone.ever";
+    specialArgs.myPkgs = import ./myPkgs {inherit inputs pkgs;};
     modules = [
       inputs.home-manager.nixosModule
-      ({ARGS, ...}: {
-        home-manager.extraSpecialArgs = { inherit ARGS; };
+      ({ARGS, myPkgs, ...}: {
+        home-manager.extraSpecialArgs = { inherit ARGS myPkgs; };
+        home-manager.useGlobalPkgs = true;
+        home-manager.useUserPackages = true;
         home-manager.users.${ARGS.username} = {imports = [ ./home.nix ];};
-        # home-manager.users.mt = { pkgs, ... }: { imports = [ ./home.nix ]; };
       })
-      ./system/alacritty/alacritty.nix
-      ./system/binutils.nix
       ./system/boot.nix
       ./system/chromium.nix
       ./system/cron-timers.nix
-      ./system/eww
+      # ./system/eww
       ./system/fish.nix
-      ./system/git.nix
       ./system/glow.nix
       ./system/latex.nix
-      ./system/fkill.nix
       ./system/fonts/fonts.nix
       ./system/fuzzel/fuzzel.nix
       ./system/hardware.nix

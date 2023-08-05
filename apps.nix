@@ -13,6 +13,15 @@ let
     '';
   };
 
+  nixos-switch-clean = pkgs.writeShellApplication {
+    name = "nixos-switch-clean";
+    runtimeInputs = [ gitMinimal nixVersions.stable nixos-rebuild ];
+    text = ''
+      sudo nix-collect-garbage --delete-older-than 30d
+      exec sudo nixos-rebuild --install-bootloader --flake .# switch
+    '';
+  };
+
   home-switch = pkgs.writeShellApplication {
     name = "home-switch";
     runtimeInputs = [ home-manager ];
@@ -33,20 +42,28 @@ let
 in
 {
 
-  ${system} = {${getName nixos-switch} = {
-    type = "app";
-    program = getExe nixos-switch;
-  };
+  ${system} = {
 
-  ${getName home-switch} = {
-    type = "app";
-    program = getExe home-switch;
-  };
+    ${getName nixos-switch-clean} = {
+      type = "app";
+      program = getExe nixos-switch-clean;
+    };
 
-  ${getName use-caches} = {
-    type = "app";
-    program = getExe use-caches;
-  };
+    ${getName nixos-switch} = {
+      type = "app";
+      program = getExe nixos-switch;
+    };
+
+    ${getName home-switch} = {
+      type = "app";
+      program = getExe home-switch;
+    };
+
+    ${getName use-caches} = {
+      type = "app";
+      program = getExe use-caches;
+    };
+
   };
 
 }

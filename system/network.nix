@@ -25,6 +25,9 @@
   ];
 
   config.environment.systemPackages = [
+    pkgs.android-file-transfer
+    pkgs.pcmanfm
+    pkgs.jmtpfs
     pkgs.pritunl-client
     pkgs.wireshark
     pkgs.tcpdump

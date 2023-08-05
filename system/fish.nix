@@ -92,9 +92,11 @@
     pa = "please add";
     pd = "please do";
     pc = "please clean";
+    tree = "tree -L 2 -p --metafirst";
 
     # [N]nix
     ns = "nix search nixpkgs";
+    nsh = "nix shell nixpkgs#hello-world";
 
     ":c" = "wl-copy";
     "+x" = "chmod +x";
