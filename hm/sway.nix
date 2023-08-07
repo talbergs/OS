@@ -4,7 +4,11 @@ let
   wsBinds = builtins.foldl' (x: y: x // y) {} (builtins.map(ws: {
     "Mod4+${ws}" = "workspace ${ws}";
     "Mod4+Shift+${ws}" = "move container to workspace ${ws}";
-  }) (builtins.genList builtins.toString 10));
+  }) (builtins.genList (a: builtins.toString(a + 1)) 9))
+  // {
+    "Mod4+0" = "workspace 10";
+    "Mod4+Shift+0" = "move container to workspace 10";
+  };
   arrowBinds = builtins.foldl' (x: y: x // y) {} (builtins.map({left, right, down, up}: {
       "Mod4+${left}" = "focus left";
       "Mod4+${down}" = "focus down";

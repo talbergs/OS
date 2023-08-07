@@ -65,6 +65,7 @@
     fzf_configure_bindings --git_log=\cg
     fzf_configure_bindings --history=\cr
     fzf_configure_bindings --directory=\cf
+    bind \cz 'fg 2>/dev/null; commandline -f repaint'
   '';
 
   config.programs.fish.shellAbbrs = {
