@@ -4,7 +4,8 @@
 
   imports =
   import ./hm/modules/default.nix pkgs ++
-  import ./hm/default.nix pkgs ++ [
+  # import ./hm/default.nix pkgs ++
+  [
     ./hm/git.nix
     ./hm/alacritty.nix
     ./hm/sway.nix
